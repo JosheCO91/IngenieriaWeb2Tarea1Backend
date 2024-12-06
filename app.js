@@ -18,11 +18,13 @@ const directores = require('./routes/directorRout')
 const productoras = require('./routes/productoraRout')
 const tipos = require('./routes/tipoRout')
 const medias = require('./routes/mediaRout')
+const usuarios = require('./routes/usuarioRout')
 
 app.use('/api/v1/generos', generos)
 app.use('/api/v1/directores', directores)
 app.use('/api/v1/productoras', productoras)
 app.use('/api/v1/tipos', tipos)
 app.use('/api/v1/medias', medias)
+app.use('/api/v1/usuarios', usuarios)
 
 module.exports = app 

@@ -3,9 +3,7 @@ const { Schema, model } = require('mongoose')
 const MediaS = Schema({
     titulo: {type: String},
     sinopsis: {type: String},
-    url: {type: String,
-        unique: true,
-    },
+    
     imagen: {type: String},
     fechaCreacion: {
         type: Date,

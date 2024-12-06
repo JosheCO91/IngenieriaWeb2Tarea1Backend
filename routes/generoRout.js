@@ -1,4 +1,5 @@
 const { Router } = require('express')
+const { verificrTok, determinarRol } = require('../middleware/autorizacion')
 
 const { nuevoGenero, 
         consulGenero,
@@ -7,13 +8,13 @@ const { nuevoGenero,
 
 const roter = Router()
 
-roter.post('/', nuevoGenero)
+roter.post('/', verificrTok, determinarRol(['Administrador']), nuevoGenero)
 
-roter.get('/', consulGenero)
+roter.get('/', verificrTok, determinarRol(['Docente', 'Administrador']), consulGenero)
 
-roter.get('/:id', consulGenePorID)
+roter.put('/:id', verificrTok, determinarRol(['Administrador']), actualizarGenero)
 
-roter.put('/:id', actualizarGenero)
+roter.get('/:id', verificrTok, determinarRol(['Administrador']), consulGenePorID)
 
 
 module.exports = roter

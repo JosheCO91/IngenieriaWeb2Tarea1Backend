@@ -9,6 +9,7 @@ const nuevoMedia = async (req = request, res = response) => {
     try{    
         const { titulo, 
                 sinopsis, 
+                imagen,
                 fechaEstreno, 
                 genero, 
                 director, 
@@ -18,6 +19,7 @@ const nuevoMedia = async (req = request, res = response) => {
         let data = { 
             titulo : titulo,
             sinopsis : sinopsis,
+            imagen: imagen,
             fechaEstreno : fechaEstreno,
             genero: genero,
             director: director,
